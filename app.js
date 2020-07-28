@@ -24,9 +24,10 @@ function deleteBook() {
     del.preventDefault();
     if (del.target.className == 'delete'){
       const li = del.target.parentElement; // get the whole li item that encapsulates the delete
-      list.removeChild(li);
-      // loop through array finding
-       
+      // Array method that gets the nth-child (in this case, the nth-LI on the UL parent)
+      let position = Array.prototype.indexOf.call(list.children, li);
+      list.removeChild(li); // html dealing
+      myLibrary.splice(position, 1); // array dealing
     }
   });
 };
