@@ -10,40 +10,43 @@ function addBookToLibrary() {
   addForms.addEventListener("submit", function(event) {
     event.preventDefault();
     const nameValue = addForms.querySelector('#name').value;
-    //console.log(nameValue);
     const authorValue = addForms.querySelector('#author').value;
-    //console.log(authorValue);
     let arr = [nameValue, authorValue];
-    console.log(arr);
     myLibrary.push(arr);
-    
-    console.log(myLibrary);
     render();
   });
-  
 }
+
+function deleteBook() {
+  list = document.querySelector('#book-list ul');
+
+  list.addEventListener('click', function(del) {
+    del.preventDefault();
+    if (del.target.className == 'delete'){
+      const li = del.target.parentElement; // get the whole li item that encapsulates the delete
+      list.removeChild(li);
+      // loop through array finding
+       
+    }
+  });
+};
 
 function render() {
   const list = document.querySelector('#book-list ul');
-   
   let i = myLibrary.length - 1;
-  
   // Create Elements
   const li = document.createElement('li');
   const bookName = document.createElement('span');
   const authorName = document.createElement('span');
   const deleteBtn = document.createElement('span');
-
   // Add content
   bookName.textContent = myLibrary[i][0];
   authorName.textContent = myLibrary[i][1];
   deleteBtn.textContent = 'delete';
-  
   // Add classes
   bookName.classList.add('name')
   authorName.classList.add('author')
   deleteBtn.classList.add('delete')
-
   // Append to document
   li.appendChild(bookName);
   li.appendChild(authorName);
@@ -52,3 +55,4 @@ function render() {
 }
 
 addBookToLibrary();
+deleteBook();
