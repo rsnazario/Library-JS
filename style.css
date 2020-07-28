@@ -62,6 +62,9 @@ h1, h2{
 #book-list li:hover{
   border-color: #9361bf;
 }
+.author {
+  margin-left: 50px;
+}
 
 .delete{
   float: right;
