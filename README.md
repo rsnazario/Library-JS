@@ -1,5 +1,6 @@
 # Library-JS
-This app is a small Book keeping Record that stores data in an array and displays the data on the webpage DOM.
+This app is a small Book keeping Record that stores data in an array and displays the data on the webpage DOM. 
+A user and create and delete the data inserted via the DOM.
 
 ## Built With
 
