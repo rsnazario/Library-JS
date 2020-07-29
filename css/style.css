@@ -33,6 +33,32 @@ h2 {
   margin: 10px 0;
 }
 
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  background: #eee;
+  padding: 10px 0;
+}
+
+.title-text {
+  margin-left: 20px;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.title-btn {
+  margin: 10px 20px 0 0;
+}
+
+.title-btn > button {
+  background-color: #9361bf;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-color: #9361bf;
+  border-radius: 5px;
+  color: white;
+}
+
 #page-banner input {
   width: 90%;
   max-width: 300px;
@@ -45,14 +71,11 @@ h2 {
   color: #444;
 }
 
-#book-list,
-#add-book,
-#tabbed-content {
+#book-list {
   margin: 30px;
 }
 
-#book-list ul,
-#tabbed-content ul {
+#book-list ul {
   list-style-type: none;
   padding: 0;
 }
@@ -87,6 +110,7 @@ h2 {
 #add-book {
   width: 400px;
   margin: 0 auto;
+  display: block;
 }
 
 #add-book input {
@@ -98,7 +122,6 @@ h2 {
   border-radius: 4px 0 0 4px;
   box-sizing: border-box;
   width: 300px;
-  float: left;
 }
 
 #add-book button {
@@ -106,18 +129,11 @@ h2 {
   background: #9361bf;
   padding: 10px 20px;
   font-size: 16px;
-  display: inline-block;
-  border-radius: 0 4px 4px 0;
+  border-radius: 5px;
   cursor: pointer;
   width: 100px;
-  float: left;
   margin: 20px 0;
   border-left: 0;
   color: white;
 }
 
-#add-book::after {
-  content: '';
-  display: block;
-  clear: both;
-}

@@ -3,26 +3,30 @@
   <head>
     <meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <title>Library</title>
   </head>
   <body>
+		<div class="title-container">
+			<div class="title-text">
+				<p>Library</p>
+			</div>
+			<div class="title-btn">
+				<button>Add Book</button>
+			</div>
+		</div>
   	<div id="wrapper">
-	    <header>
-	    	<div id="page-banner">
-	    		<h1 class="title">Bookorama</h1>
-	    	</div>
-	    </header>
 	    <div id="book-list">
 	    	<h2 class="title">Books to Read</h2>
 	    	<ul>
 	    	</ul>
 	    </div>
 	    <form id="add-book">
-				<input id="name" type="text" placeholder="Add a book..." />
+				<input id="name" type="text" placeholder="Name" />
 				<input id="author" type="text" placeholder="Author..." />
-				<button class="btnSubmit">Add</button>
-	    </form>
+				<button class="btnSubmit">Save</button>
+			</form> 
     </div>
     <script src="js/app.js"></script>
   </body>
