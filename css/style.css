@@ -2,6 +2,7 @@ body {
   font-family: Tahoma, sans-serif;
   color: #444;
   letter-spacing: 1px;
+  z-index: 1;
 }
 
 h1,
@@ -19,6 +20,11 @@ h2 {
   padding: 0 0 20px;
   overflow: hidden;
   border: 1px solid lightgray;
+  background-color: rgb(230, 230, 230);
+  position: fixed;
+  top: 20%;
+  right: 25%;
+  z-index: 5;
 }
 
 .title-container {
@@ -27,6 +33,7 @@ h2 {
   background: #eee;
   padding: 10px 0;
 }
+
 
 .title-text {
   margin-left: 20px;
@@ -75,12 +82,16 @@ h2 {
   border-color: #9361bf;
 }
 
+tbody > tr > td {
+  padding: 10px 0 10px 0;
+}
+
 .author {
   margin-left: 50px;
 }
 
 .delete {
-  float: right;
+  float: left;
   background: #9361bf;
   padding: 6px;
   border-radius: 4px;
