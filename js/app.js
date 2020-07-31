@@ -81,8 +81,11 @@ function addBookToLibrary() {
     const authorValue = addForms.querySelector('#author').value;
     const pagesValue = addForms.querySelector('#book-pages').value;
     const book = new Book(nameValue, authorValue, pagesValue, false);
+
     if ((nameValue == null || nameValue === '') || (authorValue == null || authorValue === '') || (pagesValue == null || pagesValue === '')) {
-      document.getElementById('error').innerHTML = 'Fill all the required fields';
+      document.getElementById('error').innerHTML = 'Fill all the required fields with correct format';
+    } else if (Number.isInteger(Math.floor(pagesValue)) !== true) {
+      document.getElementById('error').innerHTML = 'Incorrect format for Number of Pages';
     } else {
       myLibrary.push(book);
       render();
