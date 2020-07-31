@@ -23,6 +23,7 @@
 					<tr>
 						<th scope="col">Book Name</th>
 						<th scope="col">Author</th>
+						<th scope="col">Number of Pages</th>
 						<th scope="col">Read</th>
 						<th scope="col">Delete</th>
 					</tr>
@@ -36,10 +37,12 @@
   	<div id="wrapper">
 			<div class="form-title">
 				<p>Book</p>
+				<p id ='error'></p>
 			</div>
 	    <form id="add-book">
 				<input id="name" type="text" placeholder="Name" />
-				<input id="author" type="text" placeholder="Author..." />
+				<input id="author" type="text" placeholder="Author" />
+				<input id="book-pages" type="text" placeholder="Number of Pages" />
 				<button class="btnSubmit">Save</button>
 			</form> 
     </div>

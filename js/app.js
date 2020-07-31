@@ -1,9 +1,10 @@
 const myLibrary = [];
 
-function Book(name, author, status) {
+function Book(name, author, pages, status) {
   this.name = name;
   this.author = author;
   this.status = status;
+  this.pages = pages;
 }
 
 function openWindow() {
@@ -42,6 +43,7 @@ function render() {
   const li = document.createElement('tr');
   const bookName = document.createElement('td');
   const authorName = document.createElement('td');
+  const bookPages = document.createElement('td');
   const tdInput = document.createElement('td');
   const readbox = document.createElement('input');
   const deleteBtn = document.createElement('td');
@@ -51,17 +53,20 @@ function render() {
 
   bookName.textContent = myLibrary[i].name;
   authorName.textContent = myLibrary[i].author;
+  bookPages.textContent = myLibrary[i].pages;
   readbox.checked = myLibrary[i].status;
   deleteBtn.textContent = 'delete';
   deleteBtn.setAttribute('onclick', 'deleteBook(event)');
 
   bookName.classList.add('name');
   authorName.classList.add('author');
+  bookPages.classList.add('pages');
   deleteBtn.classList.add('delete');
   readbox.classList.add('read-button');
 
   li.appendChild(bookName);
   li.appendChild(authorName);
+  li.appendChild(bookPages);
   tdInput.appendChild(readbox);
   li.appendChild(tdInput);
   li.appendChild(deleteBtn);
@@ -74,10 +79,15 @@ function addBookToLibrary() {
     event.preventDefault();
     const nameValue = addForms.querySelector('#name').value;
     const authorValue = addForms.querySelector('#author').value;
-    const book = new Book(nameValue, authorValue, false);
-    myLibrary.push(book);
-    render();
-    closeWindow();
+    const pagesValue = addForms.querySelector('#book-pages').value;
+    const book = new Book(nameValue, authorValue, pagesValue, false);
+    if ((nameValue == null || nameValue === '') || (authorValue == null || authorValue === '') || (pagesValue == null || pagesValue === '')) {
+      document.getElementById('error').innerHTML = 'Fill all the required fields';
+    } else {
+      myLibrary.push(book);
+      render();
+      closeWindow();
+    }
   });
   return myLibrary;
 }

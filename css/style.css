@@ -131,3 +131,8 @@ tbody > tr > td {
   border-left: 0;
   color: white;
 }
+
+#error {
+  color: red;
+  font-size: 14px;
+}
