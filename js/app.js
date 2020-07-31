@@ -20,16 +20,20 @@ function closeWindow() {
 const titleBtn = document.querySelector('.title-btn button');
 titleBtn.onclick = () => openWindow();
 
-// eslint-disable-next-line no-unused-vars
-function deleteBook(e) {
-  const ul = document.querySelector('.table tbody');
-  const el = e.target;
-  if (el.className === 'delete') {
-    const li = el.parentElement;
+function deleteLogic(target, ul) {
+  if (target.className === 'delete') {
+    const li = target.parentElement;
     const position = Array.prototype.indexOf.call(ul.children, li);
     ul.removeChild(li);
     myLibrary.splice(position, 1);
   }
+}
+
+// eslint-disable-next-line no-unused-vars
+function deleteBook(e) {
+  const ul = document.querySelector('.table tbody');
+  const el = e.target;
+  deleteLogic(el, ul);
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -73,26 +77,29 @@ function render() {
   list.appendChild(li);
 }
 
-function addBookToLibrary() {
+function addLogic(nameValue, authorValue, pagesValue, book) {
+  if ((nameValue == null || nameValue === '') || (authorValue == null || authorValue === '') || (pagesValue == null || pagesValue === '')) {
+    document.getElementById('error').innerHTML = 'Fill all the required fields';
+  } else if (Number.isInteger(Math.floor(pagesValue)) !== true) {
+    document.getElementById('error').innerHTML = 'Incorrect format for Number of Pages';
+  } else {
+    myLibrary.push(book);
+    render();
+    closeWindow();
+  }
+}
+
+function addBookToLibrary(nameValue, authorValue, pagesValue, book) {
   const addForms = document.forms['add-book'];
   addForms.addEventListener('submit', (event) => {
     event.preventDefault();
-    const nameValue = addForms.querySelector('#name').value;
-    const authorValue = addForms.querySelector('#author').value;
-    const pagesValue = addForms.querySelector('#book-pages').value;
-    const book = new Book(nameValue, authorValue, pagesValue, false);
+    nameValue = addForms.querySelector('#name').value;
+    authorValue = addForms.querySelector('#author').value;
+    pagesValue = addForms.querySelector('#book-pages').value;
+    book = new Book(nameValue, authorValue, pagesValue, false);
 
-    if ((nameValue == null || nameValue === '') || (authorValue == null || authorValue === '') || (pagesValue == null || pagesValue === '')) {
-      document.getElementById('error').innerHTML = 'Fill all the required fields with correct format';
-    } else if (Number.isInteger(Math.floor(pagesValue)) !== true) {
-      document.getElementById('error').innerHTML = 'Incorrect format for Number of Pages';
-    } else {
-      myLibrary.push(book);
-      render();
-      closeWindow();
-    }
+    addLogic(nameValue, authorValue, pagesValue, book);
   });
-  return myLibrary;
 }
 
 window.onload = closeWindow();
