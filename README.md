@@ -1,5 +1,5 @@
 # Library-JS
-This app is a small Book keeping Record that stores data in an array and displays the data on the webpage DOM. 
+It is a small Bookkeeping Record that stores data in an array and displays the data on the webpage DOM. 
 A user and create and delete the data inserted via the DOM.
 
 ## Screenshots
@@ -33,32 +33,32 @@ A user and create and delete the data inserted via the DOM.
 - CSS3
 - Javascript
 - ESLint (Linter) with Stickler (CI Tool)
-- Git, Github and VScode
+- Git, Github, and Visual Studio Code
 <br>
 
 ## Getting Start
 
 #### Get a local copy
-Now you need a copy of this application, if you are using Git:
+Now you need a copy of this application if you are using Git:
 ```js
 git@github.com:rsnazario/Library-JS.git
 ```
-Otherwise just hit (Download Zip) on green button (Clone or Download) at top of this page.
+Click (Download Zip) on the green button (Clone or Download) on this page.
 
 #### Run App
 
-In order to run the App on your browser, just open the `index.html` on your Browser.
+Open the `index.html` on your web browser.
 Another option is to just click on `Go Live` on your Coding Platform.
 
 ### Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 You can do it on [issues page](issues/).
 
 ## Acknowledgments
 
-A special thanks for all Microverse Team and Code Reviewers that guides me through my learning.
+A special thanks to all Microverse Team and Code Reviewers that guides me through my learning.
 
 ## Authors
 
@@ -73,7 +73,3 @@ A special thanks for all Microverse Team and Code Reviewers that guides me throu
 - Github: [@rsnazario](https://github.com/rsnazario)
 - Twitter: [@@rsnazario](https://twitter.com/@rsnazario)
 - Linkedin: [Rafael Nazario](https://www.linkedin.com/in/rsnazario/)
-
-## Show your support
-
-Give a ⭐️ if you like this project!
